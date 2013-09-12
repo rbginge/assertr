@@ -97,13 +97,10 @@
 				});
 			},
 			assert: function(result, condition, expects) {
-				if (condition === '===') {
-					return expects === result;
-				}
-
-				if (condition === '==') {
-					return expects == result;
-				}
+				if (condition === '===') return expects === result;
+				if (condition === '==') return expects == result;
+				if (condition === '!==') return expects !== result;
+				if (condition === '!=') return expects != result;
 			}
 		};
 
