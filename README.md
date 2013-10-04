@@ -14,20 +14,20 @@ Include the assertr code before the code you want to test
 	<script src="yourcode.js"></script>
 ```
 
-#### Register the functions to test
+#### Register the functions in your codebase that you want to test
 
 ```javascript
 	var yourFunctionToTest = function(arg1, arg2) {
-    // some code here
-    return 'result of my function';
+    		// some code here
+    		return 'result of my function';
 	};
 	
 	// Takes two args; <name of test suite> and <the function to test>
 	assertr.register('yourFunctionToTest', yourFunctionToTest);
 	
 	var anotherFunctionToTest = function(arg1) {
-    // some code here
-    return 'result of my other function';
+    		// some code here
+    		return 'result of my other function';
 	};
 	
 	assertr.register('jimmyJoesFunction', anotherFunctionToTest);
