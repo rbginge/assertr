@@ -97,10 +97,22 @@
 				});
 			},
 			assert: function(result, condition, expects) {
-				if (condition === '===') return expects === result;
-				if (condition === '==') return expects == result;
-				if (condition === '!==') return expects !== result;
-				if (condition === '!=') return expects != result;
+				if (condition === '===') return result === expects;
+				if (condition === '==') return result == expects;
+				if (condition === '!==') return result !== expects;
+				if (condition === '!=') return result != expects;
+				if (condition === '>') return result > expects;
+				if (condition === '>=') return result >= expects;
+				if (condition === '<') return result < expects;
+				if (condition === '<=') return result <= expects;
+				// String or array
+				if (condition === 'contains' && result.hasOwnProperty(length)) return result.indexOf(expects) > -1;
+				// Array
+				if (condition === 'has' && result.hasOwnProperty(length) && /^\d+$/.test(expects)) return typeof result[expects] !== undefined;
+				// Object
+				if (condition === 'has') return result.hasOwnProperty(expects);
+				
+				return false;
 			}
 		};
 
