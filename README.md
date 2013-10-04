@@ -1,6 +1,9 @@
 ## Simple javascript test tool
 
-A javascript test tool designed to be simple and lightweight. At the moment the assertions only take simple comparisons(===, ==, !==, !=). More to be added soon.
+A javascript test tool designed to be simple and lightweight. The assertions can be '===', '==', '!==', '!=', '>', '>=', '<', '<=', 'contains' or 'has'. 
+
+'contains' is for checking a string or array contains a value (or substring). 'has' is for checking an object or array has a particular key. The rest should be self evident.
+
 The results of the tests will be output to the console unless you tell it to run quietly (however, in quiet mode failing tests will throw an exception).
 
 #### Include the library
